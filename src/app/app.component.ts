@@ -19,6 +19,7 @@ export class AppComponent {
   counter:number=5
   intervalId!: number;
   applyBounce:boolean=false
+  showDash:boolean=true;
 
   counterFunc() {
 
@@ -51,13 +52,18 @@ export class AppComponent {
     this.win=true;
     this.counter=5;
     this.applyBounce=false
+    this.showDash=true;
   }
 
   setScore(btn:number){
-    this.totScore=this.totScore+btn
+    this.showDash=false;
     this.score=btn;
     this.pcRandom=Math.floor(Math.random()*(7-1)+1)
+    if(btn!=this.pcRandom){
+      this.totScore=this.totScore+btn
+    }
     this.check();
+
   }
 
   check(): void {

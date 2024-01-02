@@ -35,10 +35,10 @@
       <h1 class="text-5xl mt-20 w-max mx-auto font-bungee" >Computer</h1>
 
       <div class="grid grid-cols-3 mt-16">
-        <button class="pcButton"*ngFor="let btn of buttons">{{btn}}</button>
+        <button class="px-1 py-2  m-1 bg-red-300 rounded-md font-lobster font-bold text-xl"*ngFor="let btn of buttons">{{btn}}</button>
       </div>
 
-      <div *ngIf="totScore==0;else scorePartPc" class="text-5xl font-extrabold text-red-500 w-max mx-auto mt-28" >-</div>
+      <div *ngIf="showDash;else scorePartPc" class="text-5xl font-extrabold text-red-500 w-max mx-auto mt-28" >-</div>
 
       <ng-template #scorePartPc >
         <div class="text-5xl font-extrabold text-red-500 w-max mx-auto mt-24 font-lobster">
@@ -55,7 +55,7 @@
       <h1 class="text-5xl mt-20 w-max mx-auto font-bungee" >You</h1>
   
       <div class="grid grid-cols-3 mt-16">
-        <button (click)="setScore(btn)" [disabled]="disable" class="playerButton"*ngFor="let btn of buttons;let i = index">  
+        <button (click)="setScore(btn)" [disabled]="disable" class="px-1 py-2  m-1 bg-blue-300 rounded-md hover:shadow-lg font-lobster font-bold text-xl"*ngFor="let btn of buttons;let i = index">  
           {{btn}}
         </button>
       </div>
