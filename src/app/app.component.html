@@ -38,7 +38,9 @@
         <button class="px-1 py-2  m-1 bg-red-300 rounded-md font-lobster font-bold text-xl"*ngFor="let btn of buttons">{{btn}}</button>
       </div>
 
-      <div *ngIf="showDash;else scorePartPc" class="text-5xl font-extrabold text-red-500 w-max mx-auto mt-28" >-</div>
+      <div *ngIf="showDashHere;else scorePartPc" class="text-5xl font-extrabold text-red-500 w-max mx-auto mt-28" >-</div>
+
+   
 
       <ng-template #scorePartPc >
         <div class="text-5xl font-extrabold text-red-500 w-max mx-auto mt-24 font-lobster">
